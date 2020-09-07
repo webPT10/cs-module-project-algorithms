@@ -3,9 +3,19 @@ Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 def single_number(arr):
-    # Your code here
+    arr.sort()
+    compareList = []
 
-    pass
+    if len(arr) == 0:
+        return None
+
+    for i, num in enumerate(arr): # if index is needed when running a four loop, enumerate()
+        if num in compareList:
+            compareList.remove(num)
+        else:
+            compareList.append(num)
+    
+    return compareList[0]
 
 
 if __name__ == '__main__':
