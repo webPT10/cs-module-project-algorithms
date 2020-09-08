@@ -1,11 +1,24 @@
-'''
-Input: an integer
-Returns: an integer
-'''
-def eating_cookies(n):
-    # Your code here
 
-    pass
+
+def eating_cookies(n, cache={}):
+    print(n, cache)
+    # check cache for key of n
+    if n in cache:
+        return cache[n]
+    
+    # handel 0 and 1 being passed
+    elif n < 0:
+        cache[n] = 0
+        return cache[n]
+    
+    elif n == 0:
+        cache[n] = 1
+        return cache[n]
+    
+    # else, set the key to the recursive result of the function
+    else:
+        cache[n] = eating_cookies( n - 1 ) + eating_cookies( n - 2) + eating_cookies( n - 3 )
+        return cache[n]
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
