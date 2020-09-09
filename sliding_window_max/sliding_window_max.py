@@ -8,7 +8,7 @@ def sliding_window_max(arr, k):
 
     while counter != len(arr) - k + 1:
 
-        window = arr[counter:counter + k ]
+        window = arr[ counter : counter + k ]
         biggest = max(window)
         results.append(biggest)
         counter += 1

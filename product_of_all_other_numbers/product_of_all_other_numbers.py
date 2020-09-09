@@ -5,10 +5,12 @@ def product_of_all_other_numbers(arr):
     result = []
 
     for i, num in enumerate(arr):
+        
         arr.remove(num)
         product = math.prod(arr)
         result.append(product)
         arr.insert(i, num)
+
     return result
 
 if __name__ == '__main__':
